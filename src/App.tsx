@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
@@ -7,9 +8,7 @@ function App() {
       <Navbar />
 
       <main>
-        <section id="home">
-          <h1>Shaik Mahammad Rafi </h1>
-        </section>
+       <Hero />
       </main>
     </>
   );
