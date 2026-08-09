@@ -1,12 +1,16 @@
-import { type ComponentType, type SVGProps, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./Navbar.css";
 
-type IconProps = SVGProps<SVGSVGElement> & { size?: string | number };
-
-const GithubIcon = FaGithub as unknown as ComponentType<IconProps>;
-const LinkedinIcon = FaLinkedin as unknown as ComponentType<IconProps>;
+const NAV_LINKS = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "/resume.pdf", label: "Resume", external: true },
+  { href: "#contact", label: "Contact" },
+];
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,34 +27,17 @@ function Navbar() {
         </a>
 
         <nav className="navbar-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
+          {NAV_LINKS.map(({ href, label, external }) => (
+            <a
+              key={href}
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noreferrer" : undefined}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
-
-        <div className="navbar-social">
-          <a
-            href="https://github.com/shaik-mahammad-rafi01"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <GithubIcon size={22} />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/shaik-mahammad-rafi-"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon size={22} />
-          </a>
-        </div>
 
         <button
           className="mobile-menu-button"
@@ -62,15 +49,17 @@ function Navbar() {
       </div>
 
       <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
-        <a href="#home" onClick={closeMenu}>Home</a>
-        <a href="#about" onClick={closeMenu}>About</a>
-        <a href="#skills" onClick={closeMenu}>Skills</a>
-        <a href="#experience" onClick={closeMenu}>Experience</a>
-        <a href="#projects" onClick={closeMenu}>Projects</a>
-        <a href="#certifications" onClick={closeMenu}>
-          Certifications
-        </a>
-        <a href="#contact" onClick={closeMenu}>Contact</a>
+        {NAV_LINKS.map(({ href, label, external }) => (
+          <a
+            key={href}
+            href={href}
+            onClick={closeMenu}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noreferrer" : undefined}
+          >
+            {label}
+          </a>
+        ))}
       </div>
     </header>
   );
