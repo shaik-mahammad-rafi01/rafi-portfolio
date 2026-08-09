@@ -1,7 +1,6 @@
 import {
 
   Mail,
-  Phone,
   ArrowUpRight,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "../icons";
@@ -48,20 +47,6 @@ function Contact() {
               <div>
                 <span>Email</span>
                 <p>{contact.email}</p>
-              </div>
-            </a>
-
-            <a
-              href={`tel:${contact.phone}`}
-              className="contact-card"
-            >
-              <div className="contact-icon">
-                <Phone size={21} />
-              </div>
-
-              <div>
-                <span>Phone</span>
-                <p>{contact.phone}</p>
               </div>
             </a>
 
