@@ -1,6 +1,6 @@
 # Mahammad Rafi Shaik — Portfolio
 
-A personal portfolio website built with **React**, **TypeScript**, and **Create React App**. It features a responsive flexbox layout, a sticky navigation bar with a mobile menu, and a dark theme with violet–fuchsia–cyan accents.
+A personal portfolio website built with **React**, **TypeScript**, and **Create React App**. It features a responsive flexbox layout, a sticky navigation bar with a mobile menu, a hero section with a profile photo, an about section, and a dark theme with violet–fuchsia–cyan accents.
 
 ## Tech Stack
 
@@ -8,28 +8,61 @@ A personal portfolio website built with **React**, **TypeScript**, and **Create 
 - TypeScript
 - Create React App 5 (Webpack, Babel, ESLint)
 - CSS (flexbox-based responsive layout)
-- react-icons, lucide-react
+- lucide-react, react-icons
 
 ## Features
 
-- Sticky navbar with smooth scroll links (Home, About, Skills, Experience, Projects, Certifications, Contact)
+- Sticky navbar with anchor links (Home, About, Skills, Experience, Projects, Resume, Contact) and a working Resume PDF link that opens in a new tab
 - Mobile hamburger menu that toggles a slide-down panel
-- Social links (GitHub, LinkedIn)
-- Responsive hero section using flexbox and fluid `clamp()` typography
+- Hero section with greeting, name, role, description, CTA buttons, social links (GitHub, LinkedIn, Email), and a circular profile photo with a gradient ring
+- About section with a bio, tech highlights (Frontend, Backend, Databases, Mobile), and icons
+- Responsive flexbox layout — content stacks and centers on mobile
 - Dark theme driven by CSS custom properties
+
+## Components
+
+### Navbar
+- **`components/Navbar/Navbar.tsx`** — sticky navigation bar
+- Renders the logo, desktop nav links, and a hamburger button
+- **`components/Navbar/Navbar.css`** — fixed header with backdrop blur and a slide-down mobile menu (hidden until toggled)
+
+### Hero
+- **`components/Hero/Hero.tsx`** — the home landing section
+- Shows greeting, name, role, description, CTA buttons (View Projects / Contact Me), social links, and the profile photo
+- **`components/Hero/Hero.css`** — two-column flexbox (text left, image right) that stacks below 900px; circular image with a gradient ring
+
+### About
+- **`components/About/About.tsx`** — the About section
+- Shows a bio and highlight cards for Frontend (React.js & React Native), Backend (Node.js & Express.js), Databases (MongoDB & PostgreSQL), and Mobile (React Native)
+- **`components/About/About.css`** — section heading, bio layout, and responsive highlight cards
+
+### Shared
+- **`components/icons.tsx`** — typed `react-icons` GitHub/LinkedIn components used across sections
 
 ## Project Structure
 
 ```
 src/
 ├── App.tsx                 # App shell: navbar + main content
-├── App.css                 # Hero/layout styles
-├── index.css               # Global styles, theme variables, background
+├── App.css                 # Global layout styles
+├── index.css               # Theme variables, base styles, background
 ├── declarations.d.ts       # Ambient module declarations (e.g. *.css)
+├── Assets/
+│   └── Hero.jpeg           # Hero profile image
 └── components/
-    └── Navbar/
-        ├── Navbar.tsx      # Navbar component
-        └── Navbar.css      # Navbar styles
+    ├── icons.tsx           # Shared typed social icons
+    ├── Navbar/
+    │   ├── Navbar.tsx      # Navbar component
+    │   └── Navbar.css      # Navbar styles
+    ├── Hero/
+    │   ├── Hero.tsx        # Hero section component
+    │   └── Hero.css        # Hero styles
+    └── About/
+        ├── About.tsx       # About section component
+        └── About.css       # About styles
+
+public/
+└── resume.pdf              # Resume file served at /resume.pdf
 ```
 
 ## Available Scripts
