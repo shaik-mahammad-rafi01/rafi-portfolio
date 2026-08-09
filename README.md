@@ -1,6 +1,6 @@
 # Mahammad Rafi Shaik — Portfolio
 
-A personal portfolio website built with **React**, **TypeScript**, and **Create React App**. It features a responsive flexbox layout, a sticky navigation bar with a mobile menu, a hero section with a profile photo, an about section, and a dark theme with violet–fuchsia–cyan accents.
+A personal portfolio website built with **React**, **TypeScript**, and **Create React App**. It features a responsive flexbox layout, a sticky navigation bar with a mobile menu, a hero section with a profile photo, an about section, a skills section, an experience section, and a dark theme with violet–fuchsia–cyan accents.
 
 ## Tech Stack
 
@@ -16,6 +16,8 @@ A personal portfolio website built with **React**, **TypeScript**, and **Create 
 - Mobile hamburger menu that toggles a slide-down panel
 - Hero section with greeting, name, role, description, CTA buttons, social links (GitHub, LinkedIn, Email), and a circular profile photo with a gradient ring
 - About section with a bio, tech highlights (Frontend, Backend, Databases, Mobile), and icons
+- Skills section with grouped icon chips for each technology (brand icons with hover glow)
+- Experience section with role, company, duration, location, responsibilities, and tech tags
 - Responsive flexbox layout — content stacks and centers on mobile
 - Dark theme driven by CSS custom properties
 
@@ -36,6 +38,16 @@ A personal portfolio website built with **React**, **TypeScript**, and **Create 
 - Shows a bio and highlight cards for Frontend (React.js & React Native), Backend (Node.js & Express.js), Databases (MongoDB & PostgreSQL), and Mobile (React Native)
 - **`components/About/About.css`** — section heading, bio layout, and responsive highlight cards
 
+### Skills
+- **`components/Skills/Skills.tsx`** — the Skills section
+- Renders skill categories from `data/Skills.ts` as icon chips; each skill shows a brand or generic icon (from `react-icons`) beside its name
+- **`components/Skills/Skills.css`** — icon-chip grid with hover lift, pink icon accent, and purple glow
+
+### Experience
+- **`components/Experience/Experience.tsx`** — the Experience section
+- Renders a timeline of work history from `data/Experience.ts` with role, company, duration, location, description, responsibilities, and technology tags
+- **`components/Experience/Experience.css`** — timeline cards with an icon badge, hover lift, and responsive single-column layout
+
 ### Shared
 - **`components/icons.tsx`** — typed `react-icons` GitHub/LinkedIn components used across sections
 
@@ -49,6 +61,9 @@ src/
 ├── declarations.d.ts       # Ambient module declarations (e.g. *.css)
 ├── Assets/
 │   └── Hero.jpeg           # Hero profile image
+├── data/
+│   ├── Skills.ts           # Skills section data (skill categories)
+│   └── Experience.ts       # Experience section data (work history)
 └── components/
     ├── icons.tsx           # Shared typed social icons
     ├── Navbar/
@@ -57,9 +72,15 @@ src/
     ├── Hero/
     │   ├── Hero.tsx        # Hero section component
     │   └── Hero.css        # Hero styles
-    └── About/
-        ├── About.tsx       # About section component
-        └── About.css       # About styles
+    ├── About/
+    │   ├── About.tsx       # About section component
+    │   └── About.css       # About styles
+    ├── Skills/
+    │   ├── Skills.tsx      # Skills section component
+    │   └── Skills.css      # Skills styles
+    └── Experience/
+        ├── Experience.tsx  # Experience section component
+        └── Experience.css  # Experience styles
 
 public/
 └── resume.pdf              # Resume file served at /resume.pdf
