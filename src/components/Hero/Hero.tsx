@@ -1,9 +1,32 @@
+import { useEffect, useState } from "react";
 import { ArrowRight, Mail } from "lucide-react";
 import HeroImage from "../../Assets/Hero.jpeg";
 import { GithubIcon, LinkedinIcon } from "../icons";
 import "./Hero.css";
 
 function Hero() {
+  const name = "Shaik Mahammad Rafi";
+  const [typed, setTyped] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    const progress = typed.length / name.length;
+
+    if (!isDeleting && typed.length < name.length) {
+      const delay = 120 - progress * 55;
+      timeout = setTimeout(() => setTyped(name.slice(0, typed.length + 1)), delay);
+    } else if (!isDeleting && typed.length === name.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1700);
+    } else if (isDeleting && typed.length > 0) {
+      timeout = setTimeout(() => setTyped(name.slice(0, typed.length - 1)), 45);
+    } else {
+      timeout = setTimeout(() => setIsDeleting(false), 500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [typed, isDeleting, name]);
+
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -14,7 +37,10 @@ function Hero() {
           </p>
 
           <h1>
-            Mahammad Rafi Shaik
+            {typed}
+            <span className="hero-cursor" aria-hidden="true">
+              |
+            </span>
           </h1>
 
           <h2>

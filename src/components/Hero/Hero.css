@@ -76,6 +76,24 @@
     gradientShift 6s linear infinite 1.05s;
 }
 
+.hero-cursor {
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--accent);
+  animation: blink 0.9s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
 .hero h2 {
   font-size: clamp(24px, 4vw, 38px);
   color: var(--text-muted);
