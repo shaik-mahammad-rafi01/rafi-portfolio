@@ -11,6 +11,26 @@
 
 .experience-list {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience-list::before {
+  content: "";
+  position: absolute;
+  left: 54px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(168, 85, 247, 0.5),
+    rgba(34, 211, 238, 0.15)
+  );
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: drawLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
 }
 
 .experience-card {
@@ -29,6 +49,20 @@
   transition:
     transform 0.3s ease,
     border-color 0.3s ease;
+
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.experience-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.experience-card:nth-child(2) {
+  animation-delay: 0.32s;
+}
+
+.experience-card:nth-child(3) {
+  animation-delay: 0.44s;
 }
 
 .experience-card:hover {
@@ -48,6 +82,8 @@
 
   background: rgba(168, 85, 247, 0.12);
   color: #a855f7;
+
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .experience-content {
@@ -149,6 +185,10 @@
 @media (max-width: 700px) {
   .experience {
     padding: 80px 20px;
+  }
+
+  .experience-list::before {
+    left: 46px;
   }
 
   .experience-card {

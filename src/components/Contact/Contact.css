@@ -18,6 +18,7 @@
 
 .contact-intro {
   max-width: 500px;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 .contact-intro > p {
@@ -46,8 +47,16 @@
     border-color 0.3s ease;
 }
 
+.contact-email svg {
+  transition: transform 0.3s ease;
+}
+
 .contact-email:hover {
   color: #a855f7;
+}
+
+.contact-email:hover svg {
+  transform: translateX(4px);
 }
 
 .contact-links {
@@ -72,6 +81,20 @@
   transition:
     transform 0.3s ease,
     border-color 0.3s ease;
+
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.contact-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.contact-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.contact-card:nth-child(3) {
+  animation-delay: 0.3s;
 }
 
 .contact-card:hover {
@@ -93,6 +116,12 @@
   color: #a855f7;
 
   border-radius: 8px;
+
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.1) rotate(-6deg);
 }
 
 .contact-card span {

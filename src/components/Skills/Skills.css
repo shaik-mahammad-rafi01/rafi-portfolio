@@ -25,6 +25,40 @@
   transition:
     transform 0.3s ease,
     border-color 0.3s ease;
+
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.skill-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.skill-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.skill-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.skill-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.skill-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.skill-card:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.skill-card:nth-child(7) {
+  animation-delay: 0.47s;
+}
+
+.skill-card:nth-child(8) {
+  animation-delay: 0.54s;
 }
 
 .skill-card:hover {
@@ -67,6 +101,32 @@
     background 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
+
+  animation: pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.skill-tag:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.skill-tag:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.skill-tag:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.skill-tag:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.skill-tag:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.skill-tag:nth-child(6) {
+  animation-delay: 0.4s;
 }
 
 .skill-tag svg {
@@ -87,7 +147,7 @@
 
 .skill-tag:hover svg {
   color: #e879f9;
-  transform: scale(1.15);
+  animation: wiggle 0.4s ease;
 }
 
 @media (max-width: 700px) {
