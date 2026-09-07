@@ -31,10 +31,10 @@
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
+    box-shadow: 0 0 40px var(--glow-pulse-low);
   }
   50% {
-    box-shadow: 0 0 80px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 80px var(--glow-pulse-high);
   }
 }
 
@@ -99,6 +99,49 @@
   }
   50% {
     transform: translateY(-4px);
+  }
+}
+
+@keyframes blobDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(48px, -36px) scale(1.12);
+  }
+  66% {
+    transform: translate(-36px, 28px) scale(0.94);
+  }
+}
+
+@keyframes blobDriftReverse {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-52px, 40px) scale(0.9);
+  }
+  66% {
+    transform: translate(40px, -32px) scale(1.14);
+  }
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(calc(min(340px, 70vw) / 2 + 17px))
+      rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(calc(min(340px, 70vw) / 2 + 17px))
+      rotate(-360deg);
   }
 }
 

@@ -1,6 +1,6 @@
 .about {
   padding: 110px 24px;
-  background: #111111;
+  background: var(--bg-alt);
 }
 
 .about-container {
@@ -16,7 +16,7 @@
 
 .section-heading span {
   display: inline-block;
-  color: #a855f7;
+  color: var(--accent);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -38,7 +38,7 @@
 }
 
 .about-text {
-  color: #a5a5a5;
+  color: var(--text-body);
   font-size: 16px;
   line-height: 1.8;
 }
@@ -73,8 +73,8 @@
 
   padding: 22px;
 
-  background: #181818;
-  border: 1px solid #292929;
+  background: var(--card);
+  border: 1px solid var(--border-card);
   border-radius: 10px;
 
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -100,12 +100,12 @@
 
 .about-card:hover {
   transform: translateY(-4px);
-  border-color: #a855f7;
+  border-color: var(--accent);
 }
 
 .about-card svg {
   flex-shrink: 0;
-  color: #a855f7;
+  color: var(--accent);
   transition: transform 0.3s ease;
 }
 
@@ -119,7 +119,7 @@
 }
 
 .about-card p {
-  color: #888888;
+  color: var(--text-soft);
   font-size: 13px;
   line-height: 1.5;
 }

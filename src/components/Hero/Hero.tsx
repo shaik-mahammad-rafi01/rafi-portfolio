@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Mail } from "lucide-react";
 import HeroImage from "../../Assets/Hero.jpeg";
-import { GithubIcon, LinkedinIcon } from "../icons";
+import { GithubIcon, LinkedinIcon, ReactIcon, NodeJsIcon, AwsIcon, ExpressIcon } from "../icons";
 import "./Hero.css";
 
 function Hero() {
@@ -29,6 +29,13 @@ function Hero() {
 
   return (
     <section id="home" className="hero">
+      <div className="hero-background" aria-hidden="true">
+        <div className="hero-grid" />
+        <div className="hero-blob hero-blob-1" />
+        <div className="hero-blob hero-blob-2" />
+        <div className="hero-blob hero-blob-3" />
+      </div>
+
       <div className="hero-container">
 
         <div className="hero-content">
@@ -95,7 +102,25 @@ function Hero() {
         </div>
 
         <div className="hero-image">
-          <img src={HeroImage} alt="Mahammad Rafi Shaik" />
+          <div className="hero-image-ring" aria-hidden="true" />
+          <div className="hero-image-glow" aria-hidden="true" />
+
+          <div className="hero-image-frame">
+            <img src={HeroImage} alt="Mahammad Rafi Shaik" />
+          </div>
+
+          <span className="hero-image-badge badge-react" aria-hidden="true">
+            <ReactIcon size={22} />
+          </span>
+          <span className="hero-image-badge badge-aws" aria-hidden="true">
+            <AwsIcon size={22} />
+          </span>
+          <span className="hero-image-badge badge-express" aria-hidden="true">
+            <ExpressIcon size={22} />
+          </span>
+          <span className="hero-image-badge badge-node" aria-hidden="true">
+            <NodeJsIcon size={22} />
+          </span>
         </div>
 
       </div>
