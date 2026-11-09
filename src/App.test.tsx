@@ -4,6 +4,6 @@ import App from './App';
 
 test("renders the home section", () => {
   render(<App />);
-  const heading = screen.getByRole("heading", { name: "Mahammad Rafi Shaik" });
+  const heading = screen.getByRole("heading", { name: "Shaik Mahammad Rafi" });
   expect(heading).toBeInTheDocument();
 });
